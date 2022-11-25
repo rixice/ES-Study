@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .item {
+            width: 100px;
+            height: 80px;
+            border: 1px solid black;
+            margin: 10px;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h2>点击切换颜色</h2>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+
+    <script>
+        // 获取div元素
+        let items = document.getElementsByClassName('item')
+
+        // 遍历并绑定事件
+        for(let i=0; i<items.length; i++){
+            items[i].onclick = function(){
+                // this.style.background = 'pink'  // ✔
+                items[i].style.background = 'pink'  // ×    改成let i就可行
+                // var一直处于全局，一进来就循环变成3(越界)了
+            }
+        }
+        // 当 let 时的情况：每个块儿都对应其对应的函数
+        {
+            let i = 0
+            items[i].onclick = function(){
+                items[i].style.background = 'pink'
+            }
+        }
+        {
+            let i = 1
+            items[i].onclick = function(){
+                items[i].style.background = 'pink'
+            }
+        }
+        {
+            let i = 2
+            items[i].onclick = function(){
+                items[i].style.background = 'pink'
+            }
+        }
+    </script>
+</body>
+</html>

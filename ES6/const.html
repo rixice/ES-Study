@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 声明常量
+        const SCHOOL = 'Hello'
+
+        // 1. 一定要赋初始值
+        // const A;    // Missing initializer in const declaration
+        
+        // 2. 一般常量要使用大写
+
+        // 3. 常量的值不能修改
+        // SCHOOL = 'World'     // Assignment to constant variable.
+
+        // 4. 块儿级作用域
+        // {
+        //     const PLAYER = 'me'
+        // }
+        // console.log(PLAYER);    // PLAYER is not defined
+        
+        // 5. 对于数组和对象的元素修改，不算做常量的修改，不报错
+        const arr = [1,2,3,4,5]
+
+        arr[2] = 100
+        arr.push(1000)
+        console.log(arr);   // 内存地址没有变更 ✔
+    </script>
+</body>
+</html>

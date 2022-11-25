@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>生成器函数参数</title>
+</head>
+<body>
+    <script>
+        function * gen(arg){
+            console.log(arg);   // Hello World
+
+            let one = yield 111
+            console.log(one);   // ABC
+            
+            let two = yield 222
+            console.log(two);   // XYZ
+            
+            yield 333
+        }
+
+        // 执行获取迭代器对象
+        let iterator = gen("Hello World")
+        // next方法可以传入实参
+        console.log(iterator.next());
+        console.log(iterator.next("ABC"));  // 第二次调用，ABC将作为第一次yield的返回结果
+        console.log(iterator.next("XYZ"));
+        console.log(iterator.next());
+    </script>
+</body>
+</html>

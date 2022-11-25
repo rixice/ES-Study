@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise</title>
+</head>
+<body>
+    <script>
+        // 实例化Promise对象
+        // p 有三个状态：初始化、成功、失败
+        const p = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                // 获取数据操作
+                let data = "XXX数据"
+
+                // resolve，调用resolve过后，状态会变为成功
+                resolve(data)
+
+                let err = "XXX数据获取失败"
+                reject(err)     // reject，调用reject后，状态就会变成失败
+                
+            }, 1000);
+        })
+
+        // 调用 promise 对象的 then 方法
+        p.then((value) => {
+            console.log(value);     // 成功时执行
+        }, (reason) => {
+            console.log(reason);    // 失败时执行
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object.fromEntries</title>
+</head>
+<body>
+    <script>
+        // 与 Object.entries 相反：作用是将数组等类型数据，转换成对象
+
+        // 二维数组
+        const ret1 = Object.fromEntries([
+            ["name", "zhangsan"],
+            ["age", "18"]
+        ])
+
+        // Map
+        const m = new Map()
+        m.set("name", "lisi")
+
+        const ret2 = Object.fromEntries(m)
+        
+        console.log(ret1, ret2);
+        
+    </script>
+</body>
+</html>

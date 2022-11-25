@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise实例</title>
+</head>
+<body>
+    <script>
+        const p = new Promise((resolve, reject) => {
+            let data1 = "1"
+            resolve(data1)
+        })
+
+        p.then((value) => {
+            return new Promise((resolve, reject) => {
+                let data2 = "2"
+                resolve([value, data2])     // 其实 value 就是 data1；只要resolve了，就会继续往下then
+            })
+        }).then((value) => {
+            return new Promise((resolve, reject) => {
+                let data3 = "3"
+                value.push(data3)
+                resolve(value)
+            })
+        }).then((value) => {
+            console.log(value);             // [1, 2, 3]
+        })
+    </script>
+</body>
+</html>

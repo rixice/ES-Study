@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map</title>
+</head>
+<body>
+    <script>
+        // 声明
+        let m = new Map()
+
+        // 添加元素
+        m.set("name", "张三")
+        m.set("func", function(){
+            console.log('Hello World');
+        })
+        let key = {
+            school: "鱼窝头"
+        }
+        m.set(key, [1,2,3,4,5])
+        
+        // size
+        console.log(m.size);
+        
+        // 删除
+        m.delete('name')
+
+        // 获取
+        console.log(m.get(key));
+        
+        // 遍历
+        for(let v of m){
+            console.log(v);
+        }
+
+        f = m.get("func")
+        f()
+
+    </script>
+</body>
+</html>

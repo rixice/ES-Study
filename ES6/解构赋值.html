@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // ES6 允许按照一定模式从数组和对象中提取值，对变量进行赋值
+        // 1. 数组的结构
+        const F4 = ['xiao', 'liu', 'zhao', 'song']
+        let [a,b,c,d] = F4
+        console.log(a,b,c,d);
+        
+        // 2. 对象的解构 (注意：必须要与对象里的属性同名)
+        const yuyu = {
+            name: 'zhao',
+            age: 'null',
+            xiao: ()=>{
+                console.log('haha');
+            }
+        }
+        let {name, age, xiao} = yuyu
+        console.log(name, age);
+        xiao()
+    </script>
+</body>
+</html>

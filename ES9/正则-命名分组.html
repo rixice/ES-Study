@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>正则命名捕获分组</title>
+</head>
+<body>
+    <script>
+        // 声明一个字符串
+        let str = '<a href="http://www.baidu.com">百度</a>'
+
+        // 提取 url 和 标签文本
+        const reg = /<a href="(?<url>.*)">(?<text>.*)<\/a>/      // 一个 () 代表一个分组
+
+        // 执行
+        const result = reg.exec(str)
+
+        let url = result.groups.url     // result[1]
+        let text = result.groups.text   // result[2]
+        
+        console.log('url: ', url);
+        console.log('text: ', text);
+        
+    </script>
+</body>
+</html>

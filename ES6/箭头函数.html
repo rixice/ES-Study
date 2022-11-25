@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let fn1 = function(a,b){
+
+        // }
+
+        // let fn2 = (a,b) => {
+        //     return a+b
+        // }
+        // console.log(fn2(1,2));
+        
+        // 1. this是静态的，this 始终指向函数声明时，所在作用域下的 this 的值
+        function getName(){
+            console.log(this.name)
+        }
+
+        let getName2 = () => {
+            console.log(this.name)
+        }
+
+        window.name = 'Hello';
+        const school = {
+            name: 'World'
+        }
+
+        // 直接调用
+        // getName()               // Hello  
+        // getName2()              // Hello
+
+        // // call方法调用
+        // getName.call(school)    // World
+        // getName2.call(school)   // Hello
+
+        // // 2. 不能作为构造函数实例化对象
+        // let Person = (name, age) => {
+        //     this.name = name
+        //     this.age = age
+        // }
+        // let me = new Person('xiao', 18) // Person is not a constructor, 改成function可以
+
+        // 3. 不能使用 arguments 变量
+        // let fn = () => {
+        //     console.log(arguments)  // arguments is not defined
+        // }
+        // fn(1,2,3)
+
+        // 4. 箭头函数的简写
+            // 1. 省略(), 当形参有且只有一个时
+            let add = n => {
+                return n+n
+            }
+            console.log(add(9));
+            
+            // 2. 省略{}，当代码体只有一条语句时，而且语句的执行结果就是函数的返回值
+            let pow = n => n*n
+            console.log(pow(9));
+            
+    </script>
+</body>
+</html>

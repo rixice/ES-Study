@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES8 对象方法扩展</title>
+</head>
+<body>
+    <script>
+        // 声明对象
+        const person = {
+            name: "张三",
+            age: 18,
+            address: "Guangzhou"
+        }
+
+        // 获取对象所有的键
+        console.log(Object.keys(person));
+        
+        // 获取对象所有的值
+        console.log(Object.values(person));
+        
+        // entries
+        console.log(Object.entries(person));
+        
+        // 创建 Map
+        const m = new Map(Object.entries(person))
+        console.log(m.get("name"));
+
+        // 对象属性的描述对象
+        console.log(Object.getOwnPropertyDescriptor(person));
+        
+        const obj = Object.create(null, {
+            name: {
+                // 设置值
+                value: "zhangsan",
+                // 属性特性
+                writable: true,
+                configurable: true,
+                enumerable: true
+            }
+        })
+    </script>
+</body>
+</html>

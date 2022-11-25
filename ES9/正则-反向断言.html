@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>正则-反向断言</title>
+</head>
+<body>
+    <script>
+        // 声明字符串
+        let str = "JAFADS32542341知道了嘛555啊哈哈"
+
+        // 正向断言
+        const reg = /\d+(?=啊)/         // 只有当 %d 后面是"啊"时, %d 才有效，否则为null
+        const result = reg.exec(str)
+
+        // 反向断言
+        const reg = /(?<=嘛)\d+/        // 只有当 %d 前面是"嘛"时, %d 才有效，否则为null
+        const result = reg.exec(str)
+
+        console.log(result);
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>async函数</title>
+</head>
+<body>
+    <script>
+        // async
+        // 只要返回的不是一个 Promise 类型的对象，则默认返回的是 成功的Promise对象
+
+        async function fn(){
+            // 返回字符串 ==> 返回的是一个 成功的Promise对象
+            // return "Hello"
+
+            // 抛出错误 ==> 返回的是一个 失败的Promise对象
+            // throw new Error("出错啦!")
+
+            // (常见) 返回的是一个Promise对象
+            return new Promise((resolve, reject) => {
+                resolve("Success!")
+                reject("Failed!")
+            });
+        }
+
+        const result = fn()
+
+        result.then((value) => {
+            console.log(value);     // Success!
+        },(reason) => {
+            console.log(reason);    // Failed!
+        })        
+    </script>
+</body>
+</html>

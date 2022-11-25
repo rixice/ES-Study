@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 150px;
+            background-color: blue;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div id="ad"></div>
+    <script>
+        // 需求-1：点击div 2s后，变颜色
+        let ad = document.getElementById('ad')
+    
+        // 绑定事件监听
+        ad.addEventListener('click', function(){
+            // 定时器
+            setTimeout(() => {
+                this.style.background = 'pink'
+            }, 2000);
+        })
+        
+        // 需求-2：从数组中返回偶数的元素
+        const arr = [1,6,9,10]
+        // const rst = arr.filter((arr) => {
+        //     if(arr%2 === 0){
+        //         return true;
+        //     }else{
+        //         return false;
+        //     }
+        // })
+        const rst = arr.filter(arr => arr%2 === 0)
+        console.log(rst);
+        
+        
+    </script>
+</body>
+</html>
